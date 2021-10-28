@@ -113,20 +113,6 @@ public class UsuarioDAO implements DAO<Usuario>{
 		// TODO Auto-generated method stub
 		
 	}
-	@Override
-	public void inserir(Usuario object) {
-		// TODO Auto-generated method stub
-		
-	}
-	@Override
-	public List<Object> listar() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	@Override
-	public Object buscar(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 
 }

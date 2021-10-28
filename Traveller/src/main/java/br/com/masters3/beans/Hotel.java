@@ -1,7 +1,5 @@
 package br.com.masters3.beans;
 
-import java.util.List;
-
 public class Hotel {
  private int id;
  private int id_cidade;

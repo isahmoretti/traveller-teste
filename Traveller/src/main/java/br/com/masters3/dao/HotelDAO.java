@@ -2,37 +2,46 @@ package br.com.masters3.dao;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
+
 import br.com.masters3.beans.Hotel;
 
-public class HotelDAO implements DAO<Hotel> {
+public class HotelDAO implements DAO<Hotel>{
 	
 	private DataSource dataSource;
 	public HotelDAO(DataSource dataSource) {
 		this.dataSource = dataSource;
 		
 	}
-	public HotelDAO() {
-		// TODO Auto-generated constructor stub
-	}
 	public DataSource getDataSource() {
 		return this.dataSource;
-		
-		
-		
-		
-		
+	}
+	@Override
+	public void create(Hotel Object) {
+		// TODO Auto-generated method stub
 		
 	}
 	@Override
-	public void create(Hotel object) {
+	public Hotel read(Hotel object) {
+
 		try {
-			String SQL =  "INSERT INTO TB_TIN_HOTEL (ID, ID_CIDADE, CLASSIFICACAO, VALOR, LOCALIZAÇÃO, SITE, FONE, EMAIL, OBS, ID_ENDERECO, NOME, FOTO)" 
-					+ "VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
-	
-			PreparedStatement stm = this.dataSource.getConnection().prepareStatement(SQL);
+			String sql ="SELECT "
+					+ "    tiu.id, "
+					+ "    tcid.cidade, "
+					+ "    tiu.classificacao, "
+					+ "    tiu.valor, "
+					+ "    tiu.localizacao, "
+					+ "    tiu.site, "
+					+ "    tiu.fone "
+					+ "    tiu.email, "
+					+ "    tiu.obs, "
+					+ "    tiu.id_endereco, "
+					+ "    tiu.nome, "
+					+ "    tiu.foto "
+					+ "FROM tb_tin_hotel tiu "
+					+ "INNER JOIN TB_TIN_CIDADE tcid ON tiu.ID_CIDADE = tcid.ID";
+			
+			
+			PreparedStatement stm = this.dataSource.getConnection().prepareStatement(sql);
 			stm.setInt(1, object.getId());
 			stm.setInt(2, object.getId_cidade());
 			stm.setInt(3, object.getClassificacao());
@@ -45,24 +54,37 @@ public class HotelDAO implements DAO<Hotel> {
 			stm.setInt(10, object.getId_endereco());
 			stm.setString(11, object.getNome());
 			stm.setString(12, object.getFoto());
-
-			stm.executeUpdate();
 			
-			stm.close();
+			ResultSet rs = stm.executeQuery();
+			
+			if(rs.next()) {
+				Hotel hotel = new Hotel();
+				
+				hotel.setId(rs.getInt("id"));
+				hotel.setId_cidade(rs.getInt("id_cidade"));
+				hotel.setClassificacao(rs.getInt("classificacao"));
+				hotel.setValor(rs.getString("valor"));
+				hotel.setLocalizacao(rs.getString("localizacao"));
+				hotel.setSite(rs.getString("site"));
+				hotel.setFone(rs.getString("fone"));
+				hotel.setEmail(rs.getString("email"));
+				hotel.setObs(rs.getString("obs"));
+				hotel.setNome(rs.getString("nome"));
+				hotel.setFoto(rs.getString("foto"));
+				
+				return hotel;
+			}
+			
+			else {
+				return null;
+			}
 		}
-		catch(Exception ex){
-			System.out.println("Erro no método HotelDAO.create" + ex.getMessage());
-		}
-	}
-
-	
-	
-
 		
-	
-	@Override
-	public Hotel read(Hotel object) {
-		// TODO Auto-generated method stub
+		catch(Exception ex){
+			ex.printStackTrace();
+			System.out.println("ERRO AO EFETUAR READ DE HOTEL=" + ex.getMessage());
+		}
+		
 		return null;
 	}
 	@Override
@@ -75,63 +97,6 @@ public class HotelDAO implements DAO<Hotel> {
 		// TODO Auto-generated method stub
 		
 	}
-	@Override
-	public void inserir(Hotel object) {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	
-	
-	@Override
-	public List<Object> listar() {
-		
-		List<Object> hoteis = new ArrayList<Object>();
 
-		String SQL = "SELECT * FROM tb_tin_hotel";
-		try {
-			PreparedStatement stm = this.dataSource.getConnection().prepareStatement(SQL);
-			ResultSet rs =stm.executeQuery();
-			
-			while(rs.next()) {
-				Hotel h = new Hotel();
-				h.setId(rs.getInt("id"));
-				h.setId_cidade(rs.getInt("id_cidade"));
-				h.setClassificacao(rs.getInt("Classificacao"));
-				h.setValor(rs.getString("Valor"));
-				h.setLocalizacao(rs.getString("Localizacao"));
-				h.setSite(rs.getString("Site"));
-				h.setFone(rs.getString("Fone"));
-				h.setEmail(rs.getString("Email"));
-				h.setObs(rs.getString("Obs"));
-				h.setId_cidade(rs.getInt("Id_endereco"));
-				h.setObs(rs.getString("Obs"));
-				h.setNome(rs.getString("Nome"));
-				h.setFoto(rs.getString("Foto"));
-				hoteis.add(h);			
-			}
-			
-			return hoteis;
-			
-			
-		} catch (SQLException e) {
-			System.out.println("Erro no método UsuarioDAO.create" + e.getMessage());
-		}
-		
-		return null;
-	}
-	@Override
-	public Object buscar(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
 }
-	
-	
-	
-	
-	
-	
-
-	
