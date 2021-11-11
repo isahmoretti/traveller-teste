@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+  <link rel="shortcut icon" type="image/x-icon" href="assets/images/1090favicon.ico">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
     integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
@@ -29,46 +29,34 @@
 </head>
 
 <body>
-  <!-- Modal -->
-  <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalLoginTitulo">Fazer login</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <label for="LoginEmail">Email </label>
-              <input type="email" class="form-control" id="LoginEmail">
-            </div>
-            <div class="form-group">
-              <label for="loginSenha">Senha</label>
-              <input type="password" class="form-control" id="loginSenha">
-            </div>
-            <div class="form-group form-check">
-            </div>
-            <button type="button" class="btn botao btn-lg btn-block botao">Entrar</button>
-            <small class="form-text text-muted">Esqueceu a senha?<a href="#" class="card-link" data-toggle="modal"
-                data-target="#modalRecuperarSenha"> Clique aqui</a>.</small>
-            <small class="form-text text-muted">Ainda não tem um perfil no Traveller?<a href="#" class="card-link"
-                data-toggle="modal" data-target="#modalCadastro"> Crie
-                Agora</a>.</small>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--Fecha do modal-->
+ <!-- Top Bar -->
+
+			<div class="top_bar">
+			<div class="container">
+				<div class="row">
+					<div class="col d-flex flex-row">
+						<div class="social">
+							<ul class="social_list">
+								<li class="social_list_item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+								<li class="social_list_item"><a href="#"><i class="fab fa-instagram"></i></a></li>
+								<li class="social_list_item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+								<li class="social_list_item"><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+							</ul>
+						</div>
+						<div class="user_box ml-auto">
+							<div class="user_box_login user_box_link"><a href="login.jsp" rel="noopener noreferrer">Login</a></div>
+							<div class="user_box_register user_box_link"><a href="cadastro.jsp" rel="noopener noreferrer">Cadastro</a></div>
+						</div>
+					</div>
+				</div>
+			</div>		
+		</div>
   <!--Início do menu-->
   <header>
     <nav class="navbar navbar-expand-md navbar-dark py-3"
       style="background:linear-gradient(135deg, #182857, #084F8C, #54A4EA)" id="topo">
-      <a href="./index.jsp" class="navbar-brand">
-        <img src="assets/images/logo-traveller-pequeno.svg" alt="Logo Traveller">
+      <a href="./index.jsp" class=" navbar-brand">
+        <img src="assets/images/logo-traveller-pequeno.svg" class="container" alt="Logo Traveller">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -77,19 +65,21 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link text-white m-1" href="#">Criar roteiro</a>
+            <a class="nav-link main_nav_item text-white m-1" href="criar_roteiro.jsp">Criar roteiro</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white m-1" href="#">Avaliações</a>
+            <a class="nav-link main_nav_item text-white m-1" href="avaliacoes.jsp">Avaliações</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white m-1" href="#">Ajuda</a>
-          <li class="nav-item">
-            <a class="botao  text-light nav-link m-1  text-center px-3" href="#" data-toggle="modal"
-              data-target="#modalLogin">Login</a>
+            <a class="nav-link main_nav_item text-white m-1" href="ajuda_acessibilidade.jsp">Ajuda</a>
           </li>
         </ul>
+         <form class="d-flex m-1">
+        <input class="form-control me-2" type="search" placeholder="O que você procura?" aria-label="Search">
+        <button class="btn_menu_nav px-3" type="submit"><i class="fas fa-search py-2"></i></button>
+      </form>
       </div>
+      
     </nav>
   </header>
   <!--Fim do menu-->
@@ -99,8 +89,8 @@
   </div>
 
   <!--Início Buscador-->
-  <section class="container py-4 border pesquisa">
-    <div class="row g-3 py-3 ">
+  <section class="container-fluid py-5 px-5 border pesquisa">
+    <div class=" row g-3 py-3 ">
       <div class="col-12 col-sm-6 col-md-4 col-lg-3 py-2">
         <input type="text" class="form-control" placeholder="Para onde você vai?" aria-label="Cidade">
       </div>
@@ -149,19 +139,12 @@
           <option value="3">Avaliação</option>
         </select>
       </div>
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 py-2">
-        <button type="submit" class="btn btn-primary busca_btn"><i class="fas fa-search"></i><strong>
-            Buscar</strong></button>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 py-2">
+        <button class="botao btn busca_btn px-5" type="submit"><i class="fas fa-search"></i> Buscar</button>
+      </div>
       </div>
       
-      <div class=" container row align-items-start">
-        <div class="py-3 col">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-            <label class="form-check-label" for="flexCheckChecked">
-              <p>Encontrar opções perto de mim</p>
-          </div>
-    </div>
+
     <div>
       
   </section>
@@ -172,7 +155,7 @@
        <!--Início do conteúdo principal-->
   <main>
 <!--Inicio da seção 1-->
-<section class="py-3">
+<section class="py-5">
   <div class="card-espaco card mb-3 shadow-sm" id="boxcard" style="max-width: 760px;">
     <div class="row g-0">
       <div class="col-md-4">
@@ -181,6 +164,10 @@
       </div>
               <div class="col-md-8">
                 <div class="card-body">
+                <span class=" btn-outline-secondary circulo py-2 px-3 mx-1 float-right border"><i
+                      class="far fa-bookmark"></i></span>
+                  <span class=" py-2 btn-outline-secondary px-2 circulo float-right"><i
+                      class=" curtir far fa-heart"></i></span>
                   		<h5 class="card-title">Holiday Inn Anhembi</h5>
                   		<div>
                   <p class="card-text">4,6 <i class="estrela fas fa-star"></i><a class="card-link" href="#"> (5.034
@@ -200,7 +187,7 @@
                       </ul>
                     </div>
                		<p class="clearfix">
-                     <span class="card-body float-left"><button type="button" class="px-4 btn btn-primary">Saiba
+                     <span class="card-body float-left"><button type="button" class="px-4 btn botao">Saiba
                      mais</button></span>
                     <span class="card-body float-right blog-post-preco">R$416</span>
                 </div>
@@ -219,6 +206,10 @@
       </div>
               <div class="col-md-8">
                 <div class="card-body">
+                <span class=" btn-outline-secondary circulo py-2 px-3 mx-1 float-right border"><i
+                      class="far fa-bookmark"></i></span>
+                  <span class=" py-2 btn-outline-secondary px-2 circulo float-right"><i
+                      class=" curtir far fa-heart"></i></span>
                   		<h5 class="card-title">Meliá Paulista</h5>
                   		<div>
                   <p class="card-text">4,0 <i class="estrela fas fa-star"></i><a class="card-link" href="#"> (5.034
@@ -238,7 +229,7 @@
                       </ul>
                     </div>
                		<p class="clearfix">
-                     <span class="card-body float-left"><button type="button" class="px-4 btn btn-primary">Saiba
+                    <span class="card-body float-left"><button type="button" class="px-4 btn botao">Saiba
                      mais</button></span>
                     <span class="card-body float-right blog-post-preco">R$388</span>
                 </div>
@@ -258,6 +249,10 @@
       </div>
               <div class="col-md-8">
                 <div class="card-body">
+                <span class=" btn-outline-secondary circulo py-2 px-3 mx-1 float-right border"><i
+                      class="far fa-bookmark"></i></span>
+                  <span class=" py-2 btn-outline-secondary px-2 circulo float-right"><i
+                      class=" curtir far fa-heart"></i></span>
                   		<h5 class="card-title">Ibis Styles Barra Funda</h5>
                   		<div>
                   <p class="card-text">3,7 <i class="estrela fas fa-star"></i><a class="card-link" href="#"> (5.034
@@ -277,7 +272,7 @@
                       </ul>
                     </div>
                		<p class="clearfix">
-                     <span class="card-body float-left"><button type="button" class="px-4 btn btn-primary">Saiba
+                    <span class="card-body float-left"><button type="button" class="px-4 btn botao">Saiba
                      mais</button></span>
                     <span class="card-body float-right blog-post-preco">R$188</span>
                 </div>
@@ -297,6 +292,10 @@
       </div>
               <div class="col-md-8">
                 <div class="card-body">
+                <span class=" btn-outline-secondary circulo py-2 px-3 mx-1 float-right border"><i
+                      class="far fa-bookmark"></i></span>
+                  <span class=" py-2 btn-outline-secondary px-2 circulo float-right"><i
+                      class=" curtir far fa-heart"></i></span>
                   		<h5 class="card-title">WZ Hotel Jardins</h5>
                   		<div>
                   <p class="card-text">4,7 <i class="estrela fas fa-star"></i><a class="card-link" href="#"> (5.034
@@ -316,7 +315,7 @@
                       </ul>
                     </div>
                		<p class="clearfix">
-                     <span class="card-body float-left"><button type="button" class="px-4 btn btn-primary">Saiba
+                    <span class="card-body float-left"><button type="button" class="px-4 btn botao">Saiba
                      mais</button></span>
                     <span class="card-body float-right blog-post-preco">R$265</span>
                 </div>
@@ -336,6 +335,10 @@
       </div>
               <div class="col-md-8">
                 <div class="card-body">
+                <span class=" btn-outline-secondary circulo py-2 px-3 mx-1 float-right border"><i
+                      class="far fa-bookmark"></i></span>
+                  <span class=" py-2 btn-outline-secondary px-2 circulo float-right"><i
+                      class=" curtir far fa-heart"></i></span>
                   		<h5 class="card-title">Blue Tree Premium Paulista</h5>
                   		<div>
                   <p class="card-text">4,2 <i class="estrela fas fa-star"></i><a class="card-link" href="#"> (5.034
@@ -355,7 +358,7 @@
                       </ul>
                     </div>
                		<p class="clearfix">
-                     <span class="card-body float-left"><button type="button" class="px-4 btn btn-primary">Saiba
+                     <span class="card-body float-left"><button type="button" class="px-4 btn botao">Saiba
                      mais</button></span>
                     <span class="card-body float-right blog-post-preco">R$268</span>
                 </div>
@@ -375,6 +378,10 @@
       </div>
               <div class="col-md-8">
                 <div class="card-body">
+                <span class=" btn-outline-secondary circulo py-2 px-3 mx-1 float-right border"><i
+                      class="far fa-bookmark"></i></span>
+                  <span class=" py-2 btn-outline-secondary px-2 circulo float-right"><i
+                      class=" curtir far fa-heart"></i></span>
                   		<h5 class="card-title">Mercure São Paulo Pinheiros</h5>
                   		<div>
                   <p class="card-text">4,2 <i class="estrela fas fa-star"></i><a class="card-link" href="#"> (5.034
@@ -394,7 +401,7 @@
                       </ul>
                     </div>
                		<p class="clearfix">
-                     <span class="card-body float-left"><button type="button" class="px-4 btn btn-primary">Saiba
+                     <span class="card-body float-left"><button type="button" class="px-4 btn botao">Saiba
                      mais</button></span>
                     <span class="card-body float-right blog-post-preco">R$299</span>
                 </div>
@@ -414,6 +421,10 @@
       </div>
               <div class="col-md-8">
                 <div class="card-body">
+                <span class=" btn-outline-secondary circulo py-2 px-3 mx-1 float-right border"><i
+                      class="far fa-bookmark"></i></span>
+                  <span class=" py-2 btn-outline-secondary px-2 circulo float-right"><i
+                      class=" curtir far fa-heart"></i></span>
                   		<h5 class="card-title">Confort Ibirapuera</h5>
                   		<div>
                   <p class="card-text">4,2 <i class="estrela fas fa-star"></i><a class="card-link" href="#"> (5.034
@@ -433,7 +444,7 @@
                       </ul>
                     </div>
                		<p class="clearfix">
-                     <span class="card-body float-left"><button type="button" class="px-4 btn btn-primary">Saiba
+                     <span class="card-body float-left"><button type="button" class="px-4 btn botao">Saiba
                      mais</button></span>
                     <span class="card-body float-right blog-post-preco">R$206</span>
                 </div>
@@ -453,6 +464,10 @@
       </div>
               <div class="col-md-8">
                 <div class="card-body">
+                <span class=" btn-outline-secondary circulo py-2 px-3 mx-1 float-right border"><i
+                      class="far fa-bookmark"></i></span>
+                  <span class=" py-2 btn-outline-secondary px-2 circulo float-right"><i
+                      class=" curtir far fa-heart"></i></span>
                   		<h5 class="card-title">Hilton Morumbi</h5>
                   		<div>
                   <p class="card-text">4,5 <i class="estrela fas fa-star"></i><a class="card-link" href="#"> (5.034
@@ -472,7 +487,7 @@
                       </ul>
                     </div>
                		<p class="clearfix">
-                     <span class="card-body float-left"><button type="button" class="px-4 btn btn-primary">Saiba
+                   <span class="card-body float-left"><button type="button" class="px-4 btn botao">Saiba
                      mais</button></span>
                     <span class="card-body float-right blog-post-preco">R$206</span>
                 </div>
@@ -491,6 +506,10 @@
       </div>
               <div class="col-md-8">
                 <div class="card-body">
+                <span class=" btn-outline-secondary circulo py-2 px-3 mx-1 float-right border"><i
+                      class="far fa-bookmark"></i></span>
+                  <span class=" py-2 btn-outline-secondary px-2 circulo float-right"><i
+                      class=" curtir far fa-heart"></i></span>
                   		<h5 class="card-title">La Residence</h5>
                   		<div>
                   <p class="card-text">4,5 <i class="estrela fas fa-star"></i><a class="card-link" href="#"> (5.034
@@ -510,7 +529,7 @@
                       </ul>
                     </div>
                		<p class="clearfix">
-                     <span class="card-body float-left"><button type="button" class="px-4 btn btn-primary">Saiba
+                     <span class="card-body float-left"><button type="button" class="px-4 btn botao">Saiba
                      mais</button></span>
                     <span class="card-body float-right blog-post-preco">R$206</span>
                 </div>
@@ -529,6 +548,10 @@
       </div>
               <div class="col-md-8">
                 <div class="card-body">
+                <span class=" btn-outline-secondary circulo py-2 px-3 mx-1 float-right border"><i
+                      class="far fa-bookmark"></i></span>
+                  <span class=" py-2 btn-outline-secondary px-2 circulo float-right"><i
+                      class=" curtir far fa-heart"></i></span>
                   		<h5 class="card-title">Fasano São Paulo</h5>
                   		<div>
                   <p class="card-text">4,5 <i class="estrela fas fa-star"></i><a class="card-link" href="#"> (5.034
@@ -548,7 +571,7 @@
                       </ul>
                     </div>
                		<p class="clearfix">
-                     <span class="card-body float-left"><button type="button" class="px-4 btn btn-primary">Saiba
+                     <span class="card-body float-left"><button type="button" class="px-4 btn botao">Saiba
                      mais</button></span>
                     <span class="card-body float-right blog-post-preco">R$3.206</span>
                 </div>
@@ -826,79 +849,6 @@
     <p class="text-muted small">© 2021 Traveller - Todos os direitos reservados</p>
   </div>
   <!--Fim do rodapé-->
-
-  <!--Início Modal cadastro-->
-  <div class="modal fade" id="modalCadastro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalCadastroTitulo">Criar conta</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="row">
-              <div class="col-md-6 col-sm-12 form-group">
-                <label for="nome">Nome</label>
-                <input class="form-control" type="text" name="nome" id="nome" placeholder="Nome">
-              </div>
-              <div class="col-md-6 col-sm-12 form-group">
-                <label for="nome">Sobrenome</label>
-                <input class="form-control" type="text" name="sobrenome" id="sobrenome" placeholder="Sobrenome">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="CadastroEmail">Email </label>
-              <input type="email" class="form-control" id="CadastroEmail" placeholder="Email">
-            </div>
-            <div class="form-group">
-              <label for="CadastroSenha">Senha</label>
-              <input type="password" class="form-control" id="CadastroSenha" placeholder="Senha">
-            </div>
-            <div class="py-2 form-check">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-              <label class="legenda form-check-label" for="flexCheckChecked">
-                Sim, quero receber informações sobre ofertas de viagem e novidades no Traveller. E sei que posso deixar
-                de receber quando quiser.
-              </label>
-            </div>
-            <button type="button" class="btn botao btn-lg btn-block botao">Inscreva-se</button>
-            <small class="form-text text-muted text-center">Já tem conta?</small>
-            <small class="form-text text-muted text-center"><a href="#" class="card-link" data-toggle="modal"
-                data-target="#modalCadastro">Faça login</a> usando sua conta do Traveller.</small>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--Fim modal cadastro-->
-
-  <!--Início do Modal recuperar senha-->
-  <div class="modal fade" id="modalRecuperarSenha" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalCadastroTitulo">Esqueceu sua senha?</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <p>Insira o endereço de email associado à sua conta que lhe enviaremos um link de redefinição de senha.</p>
-          <div class="form-group">
-            <label for="CadastroEmail">Email </label>
-            <input type="email" class="form-control" id="CadastroEmail" placeholder="Email">
-          </div>
-          <button type="button" class="btn botao btn-lg btn-block botao">Enviar link</button>
-          <small class="form-text text-muted text-center"> Ao continuar, você concorda com os Termos de uso e confirma
-            que leu nossa Política de privacidade e cookies.</small>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--Fim do Modal recuperar senha-->
 
   <!-- Optional JavaScript; choose one of the two! -->
 

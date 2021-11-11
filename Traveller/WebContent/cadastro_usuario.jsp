@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+          <link rel="shortcut icon" type="image/x-icon" href="assets/images/1090favicon.ico">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
             integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
@@ -13,8 +14,10 @@
    	<body>
    	 <header class="p-4 text-light cor__fundo meu__header">
 	 	<div>
-	 		<h3>Traveller</h3>
-            <h5>Cadastro de usuário</h5>
+	 		 <div class="logo_container text-center">
+				<div class="logo"><a href="index.jsp"><img src="assets/images/logo-traveller.svg" alt="logo Traveller"></a></div>
+			<h5 class="py-1">Usuário logado</h5>
+			</div>
 		 </div>
 		<div>
 			<a class="btn btn-outline-light" href="login.jsp">Logout <i class="fas fa-sign-out-alt"></i></a>
@@ -124,6 +127,7 @@
        		 <button type="submit" class="btn btn-primary my-3" id="gravar">Gravar usuário
                         <i class="fas fa-cloud-upload-alt"></i></button>
        </div>	
+    	
      </form>
    </div>
         

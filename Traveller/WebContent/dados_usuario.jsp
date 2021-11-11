@@ -5,6 +5,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="shortcut icon" type="image/x-icon" href="assets/images/1090favicon.ico">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
             integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
@@ -15,8 +16,10 @@
    	<body>
    	 <header class="p-4 text-light cor__fundo meu__header">
 	 	<div>
-	 		<h3>Projeto Traveller</h3>
-            <h5>Área logada</h5>
+	 		 <div class="logo_container text-center">
+				<div class="logo"><a href="index.jsp"><img src="assets/images/logo-traveller.svg" alt="logo Traveller"></a></div>
+			<h5 class="py-1">Usuário logado</h5>
+			</div>
 		 </div>
 		<div>
 			<a class="btn btn-outline-light" href="login.jsp">Logout <i class="fas fa-sign-out-alt"></i></a>
@@ -32,6 +35,14 @@
        			<p><c:out value="${Usuario.nivel}"></c:out></p>
        			<p>
        				<a href="cadastro_usuario.jsp" class="btn btn-success btn-sm mr-2">Cadastrar um novo usuário</a>
+       			</p>
+       			<p>
+       				<button type="button" class="btn btn-success btn-sm mr-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Cadastrar ponto turístico</button>
+       			<p>
+       				<a href="#" class="btn btn-success btn-sm mr-2">Publicar post</a>
+       			</p>
+   
        			</p>
        		</div>
        		<p class="p-3 bg-info text-light meu__header"> Dados da conta
@@ -142,6 +153,32 @@
        </div>	
      </form>
    </div>
+   
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Escolha a categoria</h5>
+           </div>
+      <div class="text-center mb-5 modal-body">
+        <div class="btn-group-vertical text-center">
+          <a href="#" class="btn btn-primary mb-1" aria-current="page">Gastronomia</a>
+          <a href="cadastro_de_hotel.jsp" class="btn btn-primary mb-1">Meios de hospedagem</a>
+          <a href="#" class="btn btn-primary mb-1">Entretenimento</a>
+          <a href="#" class="btn btn-primary mb-1">Vida noturna</a>
+          <a href="#" class="btn btn-primary mb-1">Aluguel de carro</a>
+          <a href="#" class="btn btn-primary mb-1">Meios de chegar</a>
+          <a href="#" class="btn btn-primary mb-1">Parques</a>
+          <a href="#" class="btn btn-primary mb-1">Cultura</a>
+        </div>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
         
         <footer class="p-4 text-light cor__fundo">
         	<h5 class="text-center">Projeto Traveler -Direitos Reservados</h5>
@@ -149,5 +186,15 @@
         </footer>
         <script src="assets/js/exibir_senha.js"></script>
         <script src="assets/js/permite_alterar_dados.js"></script>
+         <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
     </body>
 </html>

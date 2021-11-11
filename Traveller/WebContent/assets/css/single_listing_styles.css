@@ -1,48 +1,5 @@
 @charset "utf-8";
-/* CSS Document */
 
-/******************************
-
-[Table of Contents]
-
-1. Fonts
-2. Body and some general stuff
-3. Header
-	3.1 Top Bar
-	3.2 Logo
-	3.3 Main Nav
-	3.4 Menu
-4. Home
-	4.1 Home Slider
-	4.2 Home Slider Nav
-	4.3 Home Slider Dots
-5. Search
-6. Section Title
-7. Rating
-8. Search
-	8.1 Search Extras
-	8.2 Search More Options
-9. Hotel Info
-	9.1 Hotel Image
-	9.2 Hotel Gallery
-	9.3 Hotel Info Text
-	9.4 Hotel Info Tags
-10. Rooms
-11. Reviews
-12. Location on Map
-13. Footer
-	13.1 Footer - About
-	13.2 Footer - Blog
-	13.3 Footer - Tags
-	13.4 Footer - Contact Info
-14. Copyright
-
-
-******************************/
-
-/***********
-1. Fonts
-***********/
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
 @font-face
@@ -70,7 +27,7 @@ body
 	font-size: 14px;
 	font-weight: 400;
 	background: #FFFFFF;
-	color: #a5a5a5;
+	color: #4D5153;
 }
 div
 {
@@ -91,7 +48,7 @@ p
 	font-size: 14px;
 	line-height: 2;
 	font-weight: 400;
-	color: #929191;
+	color: #4D5153;
 	-webkit-font-smoothing: antialiased;
 	-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
 	text-shadow: rgba(0,0,0,.01) 0 0 1px;
@@ -246,74 +203,6 @@ section
 {
 	padding: 0px !important;
 }
-.button
-{
-	display: inline-block;
-	height: 53px;
-	border-radius: 27px;
-	overflow: hidden;
-	z-index: 1;
-}
-.button_bcg
-{
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 200%;
-	height: 100%;
-	background: linear-gradient(to right, #fa9e1b, #8d4fff, #fa9e1b);
-	z-index: -1;
-	-webkit-transition: all 400ms ease;
-	-moz-transition: all 400ms ease;
-	-ms-transition: all 400ms ease;
-	-o-transition: all 400ms ease;
-	transition: all 400ms ease;
-}
-.button:hover .button_bcg
-{
-	left: -100%;
-}
-.button a
-{
-	display: block;
-	font-size: 13px;
-	font-weight: 700;
-	color: #fff;
-	text-transform: uppercase;
-	line-height: 53px;
-	padding-left: 46px;
-	padding-right: 46px;
-	white-space: nowrap;
-	z-index: 2;
-}
-.button span
-{
-	display: inline-block;
-	vertical-align: middle;
-	width: 5.75px;
-	height: 5.63px;
-	background: #FFFFFF;
-	border-radius: 50%;
-	margin-right: 2px;
-}
-.button span:first-child
-{
-	margin-left: 10px;
-}
-.button span:nth-child(2)
-{
-	opacity: 0.6;
-}
-.button span:last-child
-{
-	opacity: 0.4;
-	margin-right: 0px;
-}
-.parallax-window
-{
-    min-height: 400px;
-    background: transparent;
-}
 
 /*********************************
 3. Header
@@ -323,12 +212,12 @@ section
 {
 	position: fixed;
 	width: 100%;
-	background: rgba(54, 19, 84, 0.6);
+	background: linear-gradient(135deg, #182857, #084F8C, #54A4EA);
 	z-index: 12;
 }
 .header.scrolled
 {
-	background: rgba(54, 19, 84, 0.85);
+	background:linear-gradient(135deg, #182857, #084F8C, #54A4EA)";
 }
 
 /*********************************
@@ -339,7 +228,7 @@ section
 {
 	width: 100%;
 	height: 36px;
-	background: #350a4e;
+	background:#182857;
 	-webkit-transition: all 400ms ease;
 	-moz-transition: all 400ms ease;
 	-ms-transition: all 400ms ease;
@@ -352,15 +241,7 @@ section
 	opacity: 0;
 	height: 0px;
 }
-.phone
-{
-	display: inline-block;
-	margin-right: 36px;
-	line-height: 36px;
-	font-size: 10px;
-	font-weight: 600;
-	color: #FFFFFF;
-}
+
 .social_list_item
 {
 	position: relative;
@@ -381,7 +262,7 @@ section
 }
 .social_list_item:hover a i
 {
-	color: #fa9e1c;
+	color: #CE5D2F;
 }
 .social_list_item a i
 {
@@ -1263,8 +1144,7 @@ section
 
 .single_listing
 {
-	width: 100%;
-	padding-top: 100px;
+	width: 100%;;
 	padding-bottom: 107px;
 	padding-left: 98px;
 }
@@ -1325,11 +1205,6 @@ section
 9.1 Hotel Image
 *********************************/
 
-.hotel_image
-{
-	margin-top: 29px;
-	z-index: 1;
-}
 .hotel_image img
 {
 	width: 100%;

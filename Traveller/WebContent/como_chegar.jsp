@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+<link rel="shortcut icon" type="image/x-icon" href="assets/images/1090favicon.ico">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
     integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
@@ -19,7 +19,8 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <!--Meu CSS-->
-  <link rel="stylesheet" href="assets/css/style_como_chegar.css">
+  <link rel="stylesheet" href="assets/css/como_chegar_style.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
     <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyxyzGDzrT9Wwg2bMUQQTM_WgG3jGm9mg&callback=initMap&libraries=&v=weekly"
     async></script>
@@ -28,46 +29,34 @@
 </head>
 
 <body>
-  <!-- Modal -->
-  <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalLoginTitulo">Fazer login</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <label for="LoginEmail">Email </label>
-              <input type="email" class="form-control" id="LoginEmail">
-            </div>
-            <div class="form-group">
-              <label for="loginSenha">Senha</label>
-              <input type="password" class="form-control" id="loginSenha">
-            </div>
-            <div class="form-group form-check">
-            </div>
-            <button type="button" class="btn botao btn-lg btn-block botao">Entrar</button>
-            <small class="form-text text-muted">Esqueceu a senha?<a href="#" class="card-link" data-toggle="modal"
-                data-target="#modalRecuperarSenha"> Clique aqui</a>.</small>
-            <small class="form-text text-muted">Ainda não tem um perfil no Traveller?<a href="#" class="card-link"
-                data-toggle="modal" data-target="#modalCadastro"> Crie
-                Agora</a>.</small>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--Fecha do modal-->
+    <!-- Top Bar -->
+
+			<div class="top_bar">
+			<div class="container">
+				<div class="row">
+					<div class="col d-flex flex-row">
+						<div class="social">
+							<ul class="social_list">
+								<li class="social_list_item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+								<li class="social_list_item"><a href="#"><i class="fab fa-instagram"></i></a></li>
+								<li class="social_list_item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+								<li class="social_list_item"><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+							</ul>
+						</div>
+						<div class="user_box ml-auto">
+							<div class="user_box_login user_box_link"><a href="login.jsp" rel="noopener noreferrer">Login</a></div>
+							<div class="user_box_register user_box_link"><a href="cadastro.jsp" rel="noopener noreferrer">Cadastro</a></div>
+						</div>
+					</div>
+				</div>
+			</div>		
+		</div>
   <!--Início do menu-->
   <header>
     <nav class="navbar navbar-expand-md navbar-dark py-3"
       style="background:linear-gradient(135deg, #182857, #084F8C, #54A4EA)" id="topo">
-      <a href="./index.jsp" class="navbar-brand">
-        <img src="assets/images/logo-traveller-pequeno.svg" alt="Logo Traveller">
+      <a href="./index.jsp" class=" navbar-brand">
+        <img src="assets/images/logo-traveller-pequeno.svg" class="container" alt="Logo Traveller">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -76,19 +65,21 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link text-white m-1" href="#">Criar roteiro</a>
+            <a class="nav-link main_nav_item text-white m-1" href="criar_roteiro.jsp">Criar roteiro</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white m-1" href="#">Avaliações</a>
+            <a class="nav-link main_nav_item text-white m-1" href="avaliacoes.jsp">Avaliações</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white m-1" href="#">Ajuda</a>
-          <li class="nav-item">
-            <a class="botao  text-light nav-link m-1  text-center px-3" href="#" data-toggle="modal"
-              data-target="#modalLogin">Login</a>
+            <a class="nav-link main_nav_item text-white m-1" href="ajuda_acessibilidade.jsp">Ajuda</a>
           </li>
         </ul>
+         <form class="d-flex m-1">
+        <input class="form-control me-2" type="search" placeholder="O que você procura?" aria-label="Search">
+        <button class="btn_menu_nav px-3" type="submit"><i class="fas fa-search py-2"></i></button>
+      </form>
       </div>
+      
     </nav>
   </header>
   <!--Fim do menu-->
@@ -109,7 +100,7 @@
 </section>
 <!--Fim de botoes-->
   <!--Início Buscador-->
-  <section class="container shadow-sm py-4 border pesquisa my-4">
+  <section class="container-fluid py-5 px-5 border pesquisa my-3">
     <div class="row d-flex justify-content-center g-3 py-3 px-4">
       <div class="col-12 col-sm-6 col-md-4 col-lg-4 py-2">
         <input type="text" class="form-control" placeholder="Origem" aria-label="Origem" id="origem">

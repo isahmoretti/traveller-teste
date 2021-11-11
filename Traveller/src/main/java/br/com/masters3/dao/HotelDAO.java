@@ -2,6 +2,10 @@ package br.com.masters3.dao;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.management.RuntimeErrorException;
 
 import br.com.masters3.beans.Hotel;
 
@@ -17,8 +21,37 @@ public class HotelDAO implements DAO<Hotel>{
 	}
 	@Override
 	public void create(Hotel Object) {
-		// TODO Auto-generated method stub
-		
+		try {
+			String sql ="Inset into TB_TIN_HOTEL"
+					+ "(id, cidade, classificacao, valor, localizacao, site, fone, email, obs, id_endereco, nome, foto)"
+					+ "(values (?,?,?,?,?,?,?,?,?,?,?,?)";
+			
+			PreparedStatement stm = dataSource.getConnection().prepareStatement(sql);
+			
+			stm.setInt(1, Object.getId());
+			stm.setInt(2, Object.getId_cidade());
+			stm.setInt(3, Object.getClassificacao());
+			stm.setString(4, Object.getValor());
+			stm.setString(5, Object.getLocalizacao());
+			stm.setString(6, Object.getSite());
+			stm.setString(7, Object.getFone());
+			stm.setString(8, Object.getEmail());
+			stm.setString(9, Object.getObs());
+			stm.setInt(10, Object.getId_endereco());
+			stm.setString(11, Object.getNome());
+			stm.setString(12, Object.getFoto());
+			
+			int resultado = stm.executeUpdate();
+			if (resultado != 0)
+				System.out.println("Hotel cadastrado com sucesso");
+			else
+				System.out.println("Erro ao inserir hotel. Hotel não cadastrado");
+			throw new RuntimeException("Erro ao inserir hotel. Hotel não cadastrado.");
+
+		}
+		catch (Exception ex){
+			System.out.println("Erro no método HotelDAO.create" + ex.getMessage());
+		}
 	}
 	@Override
 	public Hotel read(Hotel object) {
@@ -89,14 +122,64 @@ public class HotelDAO implements DAO<Hotel>{
 	}
 	@Override
 	public void update(Hotel object) {
-		// TODO Auto-generated method stub
-		
-	}
+		try {
+			// declaro a STRING SQL correspondente ao comando
+			// substituindo os valores pelo caractere “?”
+						String SQL = "update TB_TIN_HOTEL set id = ?, id_cidade = ?, classificacao = ?, valor = ?, "
+								+ "localizacao = ?, site = ?,fone = ?, email = ?, obs = ? nome = ?, foto = ?";
+			// gero o Statement a partir da conexao	
+						PreparedStatement stm = dataSource.getConnection().prepareStatement(SQL);
+						
+			     // preencho os parâmetros com os dados do objeto
+						stm.setInt(1, object.getId());
+						stm.setInt(2, object.getId_cidade());
+						stm.setInt(3, object.getClassificacao());
+						stm.setString(4, object.getValor());
+						stm.setString(5, object.getLocalizacao());
+						stm.setString(6, object.getSite());
+						stm.setString(7, object.getFone());
+						stm.setString(8, object.getEmail());
+						stm.setString(9, object.getObs());
+						stm.setInt(10, object.getId_endereco());
+						stm.setString(11, object.getNome());
+						stm.setString(12, object.getFoto());
+						
+						
+			// executo a instrução para atualizar a tabela
+						int res = stm.executeUpdate();
+						if (res != 0) {
+							System.out.println("Hotel alterado com sucesso");
+						}
+						else {
+							throw new RuntimeException("Erro ao atualizar hotel ");
+						}
+					}
+					catch(Exception ex) {
+						System.out.println("HotelDAO.UPDATE ="+
+			ex.getMessage());
+					}
+					
+				}
 	@Override
 	public void delete(Hotel object) {
-		// TODO Auto-generated method stub
-		
+		try {
+			// definimos nossa instrucão SQL
+			String SQL = "delete from TB_TIN_HOTEL where ID = ?";
+			PreparedStatement stm = dataSource.getConnection().prepareStatement(SQL);
+			stm.setInt(1, object.getId());
+           
+			int res = stm.executeUpdate();
+			if (res != 0) {
+				System.out.println("Hotel excluido com sucesso");
+			}
+			else {
+				throw new RuntimeException("ERRO ao apagar Hotel");
+			}
+		}
+		catch (Exception ex) {
+			System.out.println("UsuarioDAO.DELETE = "+
+                             ex.getMessage());
+		}
 	}
-
 	
 }

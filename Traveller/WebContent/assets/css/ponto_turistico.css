@@ -1,0 +1,127 @@
+#map {
+    height: 400px;
+    /* The height is 400 pixels */
+    width: 100%;
+    /* The width is the width of the web page */
+  }
+
+  .botao{
+    background-color:#CE5D2F;
+    color: #fff;
+    margin-bottom: 20px;
+ }
+
+ .estrela{
+  color: #CE5D2F;
+}
+
+.estrela_vazia{
+  color: #CE5D2F;
+}
+
+.title_expandir{
+  color:#182857;
+  text-decoration: none;
+}
+
+h2{
+  color:#182857;
+}
+
+h3{
+  color:#182857;
+}
+
+.curiosidade{
+  background-color: #DFE1F2;
+  border-radius: 10px;
+}
+
+.obra{
+  height: 247px;
+  width: 195px;
+}
+
+.icon{
+  color:#182857;
+}
+
+h1{
+  color: #CE5D2F;
+}
+
+.link_estilo{
+  color:#182857;
+}
+
+.borda{
+  border: 1px solid #DFE1F2;
+  border-radius: 10px;
+}
+
+.miniatura{
+  border-radius: 15px;
+}
+
+.salvar{
+  border: none;
+}
+
+.link_salvar{
+  color:#878787;
+  background-color: #f2f2f2;;
+  border-radius: 15px;
+}
+
+.link_salvar:hover{
+  text-decoration: underline;
+
+}
+
+.usuario{
+  border-radius: 50%;
+  height: 64px;
+  width: 64px;
+}
+
+.barra{
+  background-color: #CE5D2F;
+}
+
+.botao_avaliacao{
+  border:none;
+  background-color:#182857;
+  color:#fff;
+  border-radius: 30px;
+  padding: 0.8em;
+  margin-left: 10px;
+  margin-top: 10px
+}
+
+
+.link_rapido{
+  color:#182857
+}
+
+.meu-btn{
+  display:inline-block;
+  max-width: 265px;
+  max-height: 53px;
+  margin: 10px;
+  border: 0;
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: 600;
+  text-align: center;
+  padding: 15px;
+  box-shadow: 2px 2px 2px #993300;
+  border-radius: 25px;
+  cursor: pointer;
+  outline: none;
+  background-color: #ce5d2f;
+  color: #fff;
+}
+
+button:active{
+  box-shadow: 0 0 0 0 #993300, inset 2px 2px 2px #993300;
+}

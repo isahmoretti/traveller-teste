@@ -117,6 +117,8 @@ public String toString() {
 public void add(Hotel h) {
 	// TODO Auto-generated method stub
 	
+	
+	
 }
 
  

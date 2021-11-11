@@ -1,5 +1,7 @@
 package br.com.masters3.controllers;
 
+import java.util.ArrayList;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,7 +12,7 @@ import br.com.masters3.beans.Hotel;
 import br.com.masters3.dao.DataSource;
 import br.com.masters3.dao.HotelDAO;
 
-@WebServlet("/teste")
+@WebServlet("/hoteis")
 public class HotelServlet extends HttpServlet{
 	
 	public void doGet (HttpServletRequest request, HttpServletResponse response) {
@@ -29,8 +31,24 @@ public class HotelServlet extends HttpServlet{
 			String id_endereco = request.getParameter("id_endereco");
 			String nome = request.getParameter("nome");
 			String foto = request.getParameter("foto");
-		
 			
+			
+			Hotel hotelBD =this.recuperarHotel(
+					id,
+					id_cidade,
+					classificacao,
+					valor,
+					localizacao,
+					site, 
+					fone,
+					email,
+					obs,
+					id_endereco,
+					nome,
+					foto
+					);
+			
+			request.setAttribute("Hotel", hotelBD);
 			
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(pagina);
 			dispatcher.forward(request, response);
@@ -43,6 +61,12 @@ public class HotelServlet extends HttpServlet{
 		}
 	}
 	
+	private Hotel recuperarHotel(String id, String id_cidade, String classificacao, String valor, String localizacao,
+			String site, String fone, String email, String obs, String id_endereco, String nome, String foto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	public Hotel recuperarHotel(int id, int id_cidade, int classificacao, String valor, String localizacao, String site, String fone, String email, String obs, int id_endereco, String nome, String foto) {
 		
 		DataSource ds = new DataSource();
@@ -63,8 +87,6 @@ public class HotelServlet extends HttpServlet{
 		
 		return hotelDao.read(hotelFiltro);
 			
-			
-
 	}
 }
 
